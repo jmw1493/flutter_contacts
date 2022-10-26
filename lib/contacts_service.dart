@@ -222,6 +222,7 @@ class Contact {
   }
 
   Contact.fromMap(Map m) {
+    print(m);
     identifier = m["identifier"];
     displayName = m["displayName"];
     givenName = m["givenName"];
