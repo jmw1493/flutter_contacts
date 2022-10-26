@@ -106,23 +106,23 @@ public class SwiftContactsServicePlugin: NSObject, FlutterPlugin, CNContactViewC
         //Create the store, keys & fetch request
         let store = CNContactStore()
         var keys = [CNContactFormatter.descriptorForRequiredKeys(for: .fullName),
-                    CNContactIdentifierKey,
+                    // CNContactIdentifierKey,
                     CNContactNamePrefixKey,
                     CNContactGivenNameKey,
                     CNContactMiddleNameKey,
                     CNContactFamilyNameKey,
                     CNContactNameSuffixKey,
                     CNContactJobTitleKey,
-                    CNContactOrganizationNameKey,
+                    // CNContactOrganizationNameKey,
                     CNContactPostalAddressesKey,
                     CNContactEmailAddressesKey,
-                    CNContactUrlAddressesKey,
-                    CNContactInstantMessageAddressesKey,
+                    // CNContactUrlAddressesKey,
+                    // CNContactInstantMessageAddressesKey,
                     CNContactPhoneNumbersKey,
-                    CNContactSocialProfilesKey,
+                    // CNContactSocialProfilesKey,
                     CNContactBirthdayKey,
-                    CNContactDatesKey,
-                    CNContactNoteKey,
+                    // CNContactDatesKey,
+                    // CNContactNoteKey,
                     CNContactImageDataKey] as [Any]
 
         if(withThumbnails){
@@ -529,7 +529,6 @@ public class SwiftContactsServicePlugin: NSObject, FlutterPlugin, CNContactViewC
     func contactToDictionary(contact: CNContact, localizedLabels: Bool) -> [String:Any]{
 
         var result = [String:Any]()
-        print(result)
 
         //Simple fields
         result["identifier"] = contact.identifier
