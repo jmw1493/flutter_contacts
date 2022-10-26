@@ -410,6 +410,16 @@ public class SwiftContactsServicePlugin: NSObject, FlutterPlugin, CNContactViewC
                     contact.phoneNumbers = updatedPhoneNumbers
                 }
 
+                //Emails
+                if let emails = dictionary["emails"] as? [[String:String]]{
+                    var updatedEmails = [CNLabeledValue<NSString>]()
+                    for email in emails where nil != email["value"] {
+                        let emailLabel = email["label"] ?? ""
+                        updatedEmails.append(CNLabeledValue(label: getCommonLabel(label: emailLabel), value: email["value"]! as NSString))
+                    }
+                    contact.emailAddresses = updatedEmails
+                }
+
                 // TODO: other properties - socialProfiles, dates, birthday, note, instantMessageAddresses
 
                 //Social Profiles
@@ -422,25 +432,15 @@ public class SwiftContactsServicePlugin: NSObject, FlutterPlugin, CNContactViewC
                 //     contact.socialProfiles = updatedSocialProfiles
                 // }
 
-                //Emails
-                if let emails = dictionary["emails"] as? [[String:String]]{
-                    var updatedEmails = [CNLabeledValue<NSString>]()
-                    for email in emails where nil != email["value"] {
-                        let emailLabel = email["label"] ?? ""
-                        updatedEmails.append(CNLabeledValue(label: getCommonLabel(label: emailLabel), value: email["value"]! as NSString))
-                    }
-                    contact.emailAddresses = updatedEmails
-                }
-
-                //Urls
-                if let urls = dictionary["urls"] as? [[String:String]]{
-                    var updatedUrls = [CNLabeledValue<NSString>]()
-                    for url in urls where nil != email["value"] {
-                        let urlLabel = url["label"] ?? ""
-                        updatedUrls.append(CNLabeledValue(label: getCommonLabel(label: urlLabel), value: url["value"]! as NSString))
-                    }
-                    contact.urlAddresses = updatedUrls
-                }
+                // //Urls
+                // if let urls = dictionary["urls"] as? [[String:String]]{
+                //     var updatedUrls = [CNLabeledValue<NSString>]()
+                //     for url in urls where nil != email["value"] {
+                //         let urlLabel = url["label"] ?? ""
+                //         updatedUrls.append(CNLabeledValue(label: getCommonLabel(label: urlLabel), value: url["value"]! as NSString))
+                //     }
+                //     contact.urlAddresses = updatedUrls
+                // }
 
                 //Postal addresses
                 if let postalAddresses = dictionary["postalAddresses"] as? [[String:String]]{
