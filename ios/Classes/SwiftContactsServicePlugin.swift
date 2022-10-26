@@ -529,6 +529,7 @@ public class SwiftContactsServicePlugin: NSObject, FlutterPlugin, CNContactViewC
     func contactToDictionary(contact: CNContact, localizedLabels: Bool) -> [String:Any]{
 
         var result = [String:Any]()
+        print(result)
 
         //Simple fields
         result["identifier"] = contact.identifier
