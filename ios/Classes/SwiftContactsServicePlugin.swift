@@ -106,17 +106,24 @@ public class SwiftContactsServicePlugin: NSObject, FlutterPlugin, CNContactViewC
         //Create the store, keys & fetch request
         let store = CNContactStore()
         var keys = [CNContactFormatter.descriptorForRequiredKeys(for: .fullName),
-                    CNContactEmailAddressesKey,
-                    CNContactPhoneNumbersKey,
-                    CNContactFamilyNameKey,
+                    CNContactIdentifierKey,
+                    CNContactNamePrefixKey,
                     CNContactGivenNameKey,
                     CNContactMiddleNameKey,
-                    CNContactNamePrefixKey,
+                    CNContactFamilyNameKey,
                     CNContactNameSuffixKey,
-                    CNContactPostalAddressesKey,
-                    CNContactOrganizationNameKey,
                     CNContactJobTitleKey,
-                    CNContactBirthdayKey] as [Any]
+                    CNContactOrganizationNameKey,
+                    CNContactPostalAddressesKey,
+                    CNContactEmailAddressesKey,
+                    CNContactUrlAddressesKey,
+                    CNContactInstantMessageAddressesKey,
+                    CNContactPhoneNumbersKey,
+                    CNContactSocialProfilesKey,
+                    CNContactBirthdayKey,
+                    CNContactDatesKey,
+                    CNContactNoteKey,
+                    CNContactImageDataKey] as [Any]
 
         if(withThumbnails){
             if(photoHighResolution){
