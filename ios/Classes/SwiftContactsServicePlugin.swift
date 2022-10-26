@@ -112,7 +112,7 @@ public class SwiftContactsServicePlugin: NSObject, FlutterPlugin, CNContactViewC
                     // CNContactPhoneNumbersKey,
                     // CNContactSocialProfilesKey,
                     // CNContactDatesKey,
-                    CNContactNoteKey,
+                    // CNContactNoteKey,
                     CNContactEmailAddressesKey,
                     CNContactPhoneNumbersKey,
                     CNContactFamilyNameKey,
