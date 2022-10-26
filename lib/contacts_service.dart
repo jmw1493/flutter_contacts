@@ -225,7 +225,7 @@ class Contact {
     print(m);
     identifier = m["identifier"];
     displayName = m["displayName"];
-    givenName = m["givenName"];
+    givenName = 'blahhhh';
     middleName = m["middleName"];
     familyName = m["familyName"];
     prefix = m["prefix"];
